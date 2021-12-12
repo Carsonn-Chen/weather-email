@@ -19,9 +19,9 @@ html = html.decode('utf-8')    # 使用utf-8进行编码，不重新编码就会
 
 find = []
 
-bs = BeautifulSoup(html,'html.parser')
+bs = BeautifulSoup(html, 'html.parser')
 body = bs.body
-data = body.find('div',{'id':'7d'})
+data = body.find('div', {'id':'7d'})
 ul = data.find('ul')
 li = ul.find_all('li')
 
@@ -49,21 +49,21 @@ def get_cd_weather():
 
 # 发送邮箱基本配置
 smtpserver = 'smtp.qq.com'
-user_name = 'carsonn@qq.com'
-password = 'kkegwqqmbkgjbffj'
-sender = 'carsonn@qq.com'
+user_name = 'xxx'
+password = 'xxx'
+sender = 'xxx'
 
-receiver = ['1102623875@qq.com']
+receiver = ['xxx']
 
 # 通过Header对象编码的文本，包含utf-8编码信息和Base64编码信息
-subject = '专属每日天气预报详情 (●ω●) '
-subject = Header(subject,'utf-8').encode()
+subject = 'xxx'
+subject = Header(subject, 'utf-8').encode()
 
 # 构造邮件对象MIMEultipart对象
 # 下面的主题、发件人、收件人、日期显示在邮件页面上
 msg = MIMEMultipart('mixed')
 msg['Subject'] = subject
-msg['From'] = 'carsonn@qq.com <妍妍的帅气父亲(˙ω˙)>'
+msg['From'] = 'xxx'
 msg['To'] = ';'.join(receiver)
 msg['Date'] = str(time.strftime('%Y-%m-%d', time.localtime(time.time())))
 
